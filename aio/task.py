@@ -10,6 +10,7 @@ class Task(object):
         manager = multiprocessing.Manager()
         self.status_dict = manager.dict()
         self.set_status('')
+        self.logs = manager.list()
         self.logger = utilities.create_logger(self.id)
 
     def is_active(self):
@@ -20,3 +21,10 @@ class Task(object):
 
     def get_status(self):
         return self.status_dict['status']
+
+    def log(self, info):
+        self.logs.append(info)
+        self.logger.info(info)
+
+    def get_logs(self):
+        return self.logs
