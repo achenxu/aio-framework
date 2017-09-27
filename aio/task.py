@@ -1,5 +1,5 @@
 import uuid
-import multiprocessing
+import multiprocess
 from aio import utilities
 
 class Task(object):
@@ -7,7 +7,7 @@ class Task(object):
         self.id = str(uuid.uuid4())
         self.data = task_data
         self.process = None
-        manager = multiprocessing.Manager()
+        manager = multiprocess.Manager()
         self.status_dict = manager.dict()
         self.set_status('')
         self.logs = manager.list()

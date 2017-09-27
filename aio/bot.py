@@ -1,4 +1,4 @@
-import multiprocessing
+import multiprocess
 import time
 
 class Bot(object):
@@ -14,7 +14,7 @@ class Bot(object):
     def start_task(self, task_id):
         task = self.tasks.get(task_id, None)
         if task:
-            task.process = multiprocessing.Process(target=self.__execute_task_wrapper, args=(task,))
+            task.process = multiprocess.Process(target=self.__execute_task_wrapper, args=(task,))
             task.process.start()
 
     def stop_task(self, task_id):
