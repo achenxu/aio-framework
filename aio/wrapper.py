@@ -28,14 +28,14 @@ class ApiWrapper(object):
         proxy = self.get_random_proxy()
         return self.session.request(method=method, url=self.make_url(url), proxies=proxy, **kwargs)
 
-    def get(self, url, **kwargs):
-        return self.request('get', url, **kwargs)
+    def get(self, url, params=None, **kwargs):
+        return self.request('get', url, params=params, **kwargs)
 
-    def post(self, url, **kwargs):
-        return self.request('post', url, **kwargs)
+    def post(self, url, data=None, json=None, **kwargs):
+        return self.request('post', url, data=data, json=json, **kwargs)
 
-    def put(self, url, **kwargs):
-        return self.request('put', url, **kwargs)
+    def put(self, url, data=None, **kwargs):
+        return self.request('put', url, data=data, **kwargs)
 
-    def patch(self, url, **kwargs):
+    def patch(self, url, data=None, **kwargs):
         return self.request('patch', url, **kwargs)
