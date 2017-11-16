@@ -9,7 +9,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='aio-framework',
-    version='0.0.4',
+    version='0.0.5',
     description='Ayinope AIO Framework',
     long_description=long_description,
     url='https://github.com/kfichter/aio',
@@ -29,5 +29,5 @@ setup(
     ],
     keywords='sneaker bot development',
     packages=find_packages(),
-    install_requires=['proxy-manager','multiprocess']
+    install_requires=['proxy-manager','multiprocess','taskdb']
 )
