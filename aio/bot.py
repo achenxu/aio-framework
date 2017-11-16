@@ -1,8 +1,10 @@
 import threading
 import time
+from taskdb import TaskDB
 
 class Bot(object):
     def __init__(self):
+        self.task_db = TaskDB()
         self.tasks = {}
 
     def execute_task(self, task):
