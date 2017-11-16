@@ -4,7 +4,7 @@ A Python website bot development framework (WIP)
 
 ## Introduction
 
-This project was created to aid the development of website bots and API wrappers. `aio-framework` handles task management and execution, session management, and captcha queue management (with threads!). Currently, captcha queue management supports 2Captcha. `aio-framework` is meant to decrease development time by providing common bot and API wrapper functionality.
+This project was created to aid the development of website bots and API wrappers. `aio-framework` handles task management and execution and session management. `aio-framework` is meant to decrease development time by providing common bot and API wrapper functionality.
 
 ## Basic Usage
 
@@ -42,7 +42,7 @@ class ExampleApiWrapper(ApiWrapper):
 ```python
 # examplebot.py
 from aio import Bot
-from aio.captcha import CaptchaManager
+from captchamanager import CaptchaManager
 from exampleapiwrapper import ExampleApiWrapper
 
 class ExampleBot(Bot):
