@@ -9,7 +9,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='aio-framework',
-    version='0.0.3',
+    version='0.0.4',
     description='Ayinope AIO Framework',
     long_description=long_description,
     url='https://github.com/kfichter/aio',
