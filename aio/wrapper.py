@@ -25,7 +25,7 @@ class ApiWrapper(object):
         return endpoint if is_full_url else self.BASE_URL + str(endpoint)
 
     def request(self, method, url, **kwargs):
-        proxy = self.get_random_proxy()
+        proxy = kwargs.get('proxies', self.get_random_proxy())
         return self.session.request(method=method, url=self.make_url(url), proxies=proxy, **kwargs)
 
     def get(self, url, params=None, **kwargs):
@@ -39,3 +39,6 @@ class ApiWrapper(object):
 
     def patch(self, url, data=None, **kwargs):
         return self.request('patch', url, **kwargs)
+
+    def delete(self, url, **kwargs):
+        return self.request('delete', url, **kwargs)
